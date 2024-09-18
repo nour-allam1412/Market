@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/basic_navigation.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.fp.market.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/action_loginFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.fp.market.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+
+        <argument
+            android:name="username"
+            android:defaultValue="User"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_menuFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.fp.market.CheckOutFragment"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out">
+
+        <action
+            android:id="@+id/action_checkOutFragment_to_operationSuccesfulFragment"
+            app:destination="@id/operationSuccesfulFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/operationSuccesfulFragment"
+        android:name="com.fp.market.OperationSuccesfulFragment"
+        android:label="fragment_operation_succesful"
+        tools:layout="@layout/fragment_operation_succesful" />
+
+</navigation>
